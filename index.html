@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameVerse Hub - Minecraft & Gaming Guides</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(to bottom,#4CAF50,#1B5E20);
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:40px;
+    background:rgba(0,0,0,0.5);
+}
+
+header h1{
+    font-size:3rem;
+}
+
+/* NAV */
+nav{
+    background:#111;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+}
+
+/* SEARCH */
+.search-box{
+    text-align:center;
+    margin:20px;
+}
+
+.search-box input{
+    width:80%;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+}
+
+/* CARDS */
+.section{
+    padding:20px;
+}
+
+.section h2{
+    color:#FFD54F;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:rgba(0,0,0,0.4);
+    padding:15px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.command{
+    background:#222;
+    padding:6px;
+    margin-top:10px;
+    font-family:monospace;
+}
+
+/* BUTTON */
+button{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#ff9800;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎮 GameVerse Hub</h1>
+<p>Minecraft • Roblox • Cricket • Fortnite Guides</p>
+</header>
+
+<nav>
+<a href="#minecraft">Minecraft</a>
+<a href="#roblox">Roblox</a>
+<a href="#cricket">Cricket</a>
+<a href="#fortnite">Fortnite</a>
+</nav>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search games or tutorials..." onkeyup="searchFunction()">
+</div>
+
+<!-- MINECRAFT -->
+<section id="minecraft" class="section">
+<h2>⛏ Minecraft Commands</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Give Diamond Sword</h3>
+<div class="command">/give @p diamond_sword</div>
+</div>
+
+<div class="card">
+<h3>Creative Mode</h3>
+<div class="command">/gamemode creative</div>
+</div>
+
+<div class="card">
+<h3>Set Day</h3>
+<div class="command">/time set day</div>
+</div>
+
+<div class="card">
+<h3>Clear Weather</h3>
+<div class="command">/weather clear</div>
+</div>
+
+</div>
+</section>
+
+<!-- ROBLOX -->
+<section id="roblox" class="section">
+<h2>🟦 Roblox Tutorials</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Studio Basics</h3>
+<p>Learn Roblox game creation.</p>
+</div>
+
+<div class="card">
+<h3>Lua Scripting</h3>
+<p>Start coding simple scripts.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CRICKET -->
+<section id="cricket" class="section">
+<h2>🏏 Cricket Games</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Batting Tips</h3>
+<p>Improve timing and shots.</p>
+</div>
+
+<div class="card">
+<h3>Career Mode Guide</h3>
+<p>Start your pro career in Real Cricket 24.</p>
+</div>
+
+</div>
+</section>
+
+<!-- FORTNITE -->
+<section id="fortnite" class="section">
+<h2>🛡 Fortnite Tips</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Building Basics</h3>
+<p>Walls, ramps, and defense.</p>
+</div>
+
+<div class="card">
+<h3>Aim Practice</h3>
+<p>Improve shooting accuracy.</p>
+</div>
+
+</div>
+</section>
+
+<!-- TIP -->
+<section class="section">
+<h2>⭐ Random Gaming Tip</h2>
+
+<button onclick="showTip()">Show Tip</button>
+<p id="tip"></p>
+</section>
+
+<footer>
+<p>GameVerse Hub © 2026</p>
+</footer>
+
+<script>
+function searchFunction(){
+let input = document.getElementById("search").value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+if(card.innerText.toLowerCase().includes(input)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+}
+
+function showTip(){
+let tips=[
+"Always carry food in Minecraft.",
+"Practice building in Fortnite.",
+"Use enchantments wisely.",
+"Learn game controls first.",
+"Explore caves carefully."
+];
+
+document.getElementById("tip").innerText =
+tips[Math.floor(Math.random()*tips.length)];
+}
+</script>
+
+</body>
+</html>
