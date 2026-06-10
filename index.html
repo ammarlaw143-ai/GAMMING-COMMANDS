@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GameVerse Hub - Minecraft & Gaming Guides</title>
+<title>GameVerse Pro Hub</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial;
-    background:linear-gradient(to bottom,#4CAF50,#1B5E20);
+    background:linear-gradient(135deg,#1b5e20,#2e7d32,#000);
     color:white;
 }
 
@@ -27,10 +27,11 @@ header h1{
 /* NAV */
 nav{
     background:#111;
-    padding:15px;
+    padding:12px;
     text-align:center;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 nav a{
@@ -41,64 +42,76 @@ nav a{
 }
 
 /* SEARCH */
-.search-box{
+.search{
     text-align:center;
     margin:20px;
 }
 
-.search-box input{
+.search input{
     width:80%;
     padding:12px;
-    border-radius:8px;
     border:none;
+    border-radius:10px;
+    font-size:16px;
 }
 
-/* CARDS */
-.section{
+/* SECTION */
+section{
     padding:20px;
 }
 
-.section h2{
-    color:#FFD54F;
+h2{
+    color:#ffd54f;
 }
 
+/* GRID */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:15px;
 }
 
+/* CARD */
 .card{
     background:rgba(0,0,0,0.4);
     padding:15px;
-    border-radius:10px;
+    border-radius:12px;
     transition:0.3s;
+    cursor:pointer;
+    position:relative;
 }
 
 .card:hover{
     transform:scale(1.05);
+    background:rgba(255,255,255,0.1);
 }
 
-.command{
-    background:#222;
-    padding:6px;
+.icon{
+    font-size:30px;
+}
+
+/* hidden details */
+.details{
+    display:none;
     margin-top:10px;
-    font-family:monospace;
+    color:#c8e6c9;
 }
 
 /* BUTTON */
 button{
-    padding:10px;
+    padding:10px 15px;
     border:none;
     border-radius:8px;
-    cursor:pointer;
     background:#ff9800;
+    cursor:pointer;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
     background:#000;
+    margin-top:20px;
 }
 </style>
 </head>
@@ -106,145 +119,199 @@ footer{
 <body>
 
 <header>
-<h1>🎮 GameVerse Hub</h1>
-<p>Minecraft • Roblox • Cricket • Fortnite Guides</p>
+<h1>🎮 GameVerse Pro Hub</h1>
+<p>Minecraft • Roblox • Fortnite • Cricket • More Games</p>
 </header>
 
 <nav>
 <a href="#minecraft">Minecraft</a>
 <a href="#roblox">Roblox</a>
-<a href="#cricket">Cricket</a>
 <a href="#fortnite">Fortnite</a>
+<a href="#cricket">Cricket</a>
+<a href="#others">More Games</a>
 </nav>
 
-<div class="search-box">
-<input type="text" id="search" placeholder="Search games or tutorials..." onkeyup="searchFunction()">
+<div class="search">
+<input type="text" id="searchBox" placeholder="Search commands, games, tutorials..." onkeyup="searchCards()">
 </div>
 
 <!-- MINECRAFT -->
-<section id="minecraft" class="section">
-<h2>⛏ Minecraft Commands</h2>
+<section id="minecraft">
+<h2>⛏ Minecraft Commands Hub</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>Give Diamond Sword</h3>
-<div class="command">/give @p diamond_sword</div>
+<div class="card" onclick="toggle(this)">
+<div class="icon">⚔️</div>
+<h3>Give Items</h3>
+<div class="details">/give @p diamond_sword 1</div>
 </div>
 
-<div class="card">
-<h3>Creative Mode</h3>
-<div class="command">/gamemode creative</div>
+<div class="card" onclick="toggle(this)">
+<div class="icon">🏃</div>
+<h3>Game Mode</h3>
+<div class="details">/gamemode creative</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="toggle(this)">
+<div class="icon">☀️</div>
 <h3>Set Day</h3>
-<div class="command">/time set day</div>
+<div class="details">/time set day</div>
 </div>
 
-<div class="card">
+<div class="card" onclick="toggle(this)">
+<div class="icon">🌧</div>
 <h3>Clear Weather</h3>
-<div class="command">/weather clear</div>
+<div class="details">/weather clear</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">📦</div>
+<h3>More Items</h3>
+<div class="details">/give @p iron_pickaxe 1</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">🔥</div>
+<h3>Kill All Mobs</h3>
+<div class="details">/kill @e[type=!player]</div>
 </div>
 
 </div>
 </section>
 
 <!-- ROBLOX -->
-<section id="roblox" class="section">
-<h2>🟦 Roblox Tutorials</h2>
+<section id="roblox">
+<h2>🟦 Roblox Studio</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>Studio Basics</h3>
-<p>Learn Roblox game creation.</p>
+<div class="card" onclick="toggle(this)">
+<div class="icon">🏗</div>
+<h3>Build Games</h3>
+<div class="details">Use Roblox Studio tools to create maps.</div>
 </div>
 
-<div class="card">
-<h3>Lua Scripting</h3>
-<p>Start coding simple scripts.</p>
-</div>
-
-</div>
-</section>
-
-<!-- CRICKET -->
-<section id="cricket" class="section">
-<h2>🏏 Cricket Games</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Batting Tips</h3>
-<p>Improve timing and shots.</p>
-</div>
-
-<div class="card">
-<h3>Career Mode Guide</h3>
-<p>Start your pro career in Real Cricket 24.</p>
+<div class="card" onclick="toggle(this)">
+<div class="icon">💻</div>
+<h3>Lua Basics</h3>
+<div class="details">Learn scripting with Lua language.</div>
 </div>
 
 </div>
 </section>
 
 <!-- FORTNITE -->
-<section id="fortnite" class="section">
+<section id="fortnite">
 <h2>🛡 Fortnite Tips</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>Building Basics</h3>
-<p>Walls, ramps, and defense.</p>
+<div class="card" onclick="toggle(this)">
+<div class="icon">🏗</div>
+<h3>Building</h3>
+<div class="details">Practice fast building skills.</div>
 </div>
 
-<div class="card">
-<h3>Aim Practice</h3>
-<p>Improve shooting accuracy.</p>
+<div class="card" onclick="toggle(this)">
+<div class="icon">🎯</div>
+<h3>Aim Training</h3>
+<div class="details">Improve shooting accuracy daily.</div>
+</div>
+
+</div>
+</section>
+
+<!-- CRICKET -->
+<section id="cricket">
+<h2>🏏 Cricket Games</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">🏆</div>
+<h3>Career Mode</h3>
+<div class="details">Start your pro cricket journey.</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">🏏</div>
+<h3>Batting Tips</h3>
+<div class="details">Improve timing and shot selection.</div>
+</div>
+
+</div>
+</section>
+
+<!-- MORE GAMES -->
+<section id="others">
+<h2>🎮 More Games</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">🚗</div>
+<h3>GTA Tips</h3>
+<div class="details">Open world missions and cheats.</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">⚽</div>
+<h3>FIFA / FC</h3>
+<div class="details">Best formation and skill moves.</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="icon">🔫</div>
+<h3>PUBG</h3>
+<div class="details">Survival and landing strategies.</div>
 </div>
 
 </div>
 </section>
 
 <!-- TIP -->
-<section class="section">
+<section>
 <h2>⭐ Random Gaming Tip</h2>
-
-<button onclick="showTip()">Show Tip</button>
+<button onclick="tip()">Show Tip</button>
 <p id="tip"></p>
 </section>
 
 <footer>
-<p>GameVerse Hub © 2026</p>
+<p>GameVerse Pro Hub © 2026</p>
 </footer>
 
 <script>
-function searchFunction(){
-let input = document.getElementById("search").value.toLowerCase();
-let cards = document.querySelectorAll(".card");
 
-cards.forEach(card=>{
-if(card.innerText.toLowerCase().includes(input)){
-card.style.display="block";
-}else{
-card.style.display="none";
-}
-});
+function toggle(card){
+    let d = card.querySelector(".details");
+    d.style.display = (d.style.display === "block") ? "none" : "block";
 }
 
-function showTip(){
+function searchCards(){
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(c=>{
+        c.style.display = c.innerText.toLowerCase().includes(input)
+        ? "block" : "none";
+    });
+}
+
+function tip(){
 let tips=[
 "Always carry food in Minecraft.",
-"Practice building in Fortnite.",
-"Use enchantments wisely.",
-"Learn game controls first.",
-"Explore caves carefully."
+"Use high ground in Fortnite.",
+"Practice aim daily.",
+"Learn commands step by step.",
+"Explore caves carefully.",
+"Upgrade gear regularly."
 ];
 
 document.getElementById("tip").innerText =
 tips[Math.floor(Math.random()*tips.length)];
 }
+
 </script>
 
 </body>
