@@ -2,116 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GameVerse Pro Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-    margin:0;
-    font-family:Arial;
-    background:linear-gradient(135deg,#1b5e20,#2e7d32,#000);
-    color:white;
+margin:0;
+font-family:Arial;
+color:white;
+background:linear-gradient(-45deg,#0f9b0f,#1a237e,#004d40,#311b92);
+background-size:400% 400%;
+animation:bg 12s infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 /* HEADER */
 header{
-    text-align:center;
-    padding:40px;
-    background:rgba(0,0,0,0.5);
+text-align:center;
+padding:35px;
+background:rgba(0,0,0,0.6);
 }
 
 header h1{
-    font-size:3rem;
+font-size:3rem;
 }
 
 /* NAV */
 nav{
-    background:#111;
-    padding:12px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
+background:#111;
+padding:10px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:999;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:10px;
-    font-weight:bold;
+nav button{
+background:none;
+border:none;
+color:white;
+margin:10px;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* SEARCH */
-.search{
-    text-align:center;
-    margin:20px;
+input{
+padding:12px;
+width:80%;
+max-width:500px;
+border:none;
+border-radius:10px;
+margin:10px;
 }
 
-.search input{
-    width:80%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
+/* PAGE */
+.page{
+display:none;
+padding:20px;
 }
 
-/* SECTION */
-section{
-    padding:20px;
-}
-
-h2{
-    color:#ffd54f;
+.active{
+display:block;
 }
 
 /* GRID */
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:15px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
 /* CARD */
 .card{
-    background:rgba(0,0,0,0.4);
-    padding:15px;
-    border-radius:12px;
-    transition:0.3s;
-    cursor:pointer;
-    position:relative;
+background:rgba(0,0,0,0.45);
+padding:15px;
+border-radius:12px;
+width:260px;
+transition:0.3s;
 }
 
 .card:hover{
-    transform:scale(1.05);
-    background:rgba(255,255,255,0.1);
+transform:scale(1.07);
+background:rgba(255,255,255,0.08);
 }
 
-.icon{
-    font-size:30px;
+.card img{
+width:100%;
+border-radius:10px;
 }
 
-/* hidden details */
-.details{
-    display:none;
-    margin-top:10px;
-    color:#c8e6c9;
+/* COMMAND */
+.cmd{
+background:#222;
+padding:8px;
+border-radius:6px;
+font-family:monospace;
+margin-top:10px;
 }
 
 /* BUTTON */
-button{
-    padding:10px 15px;
-    border:none;
-    border-radius:8px;
-    background:#ff9800;
-    cursor:pointer;
+button.gen{
+background:#00c853;
+padding:10px;
+border:none;
+cursor:pointer;
+margin-top:10px;
+color:white;
+border-radius:8px;
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
-    margin-top:20px;
+/* LINKS */
+a{
+color:#ffd54f;
 }
 </style>
 </head>
@@ -120,196 +129,147 @@ footer{
 
 <header>
 <h1>🎮 GameVerse Pro Hub</h1>
-<p>Minecraft • Roblox • Fortnite • Cricket • More Games</p>
+<p>Minecraft • Roblox • Fortnite • GTA • PUBG • FIFA • Guides</p>
 </header>
 
 <nav>
-<a href="#minecraft">Minecraft</a>
-<a href="#roblox">Roblox</a>
-<a href="#fortnite">Fortnite</a>
-<a href="#cricket">Cricket</a>
-<a href="#others">More Games</a>
+<button onclick="show('home')">Home</button>
+<button onclick="show('minecraft')">Minecraft</button>
+<button onclick="show('games')">Games</button>
+<button onclick="show('tools')">Tools</button>
+<button onclick="show('links')">Links</button>
 </nav>
 
-<div class="search">
-<input type="text" id="searchBox" placeholder="Search commands, games, tutorials..." onkeyup="searchCards()">
+<!-- HOME -->
+<div id="home" class="page active">
+<h2>🔥 Welcome to Pro Gaming Hub</h2>
+<p>Search commands, explore games, and learn tutorials like a pro gamer.</p>
+
+<img src="https://i.imgur.com/3G8fXwF.png" width="200">
+<img src="https://i.imgur.com/0XKc9qG.png" width="200">
 </div>
 
 <!-- MINECRAFT -->
-<section id="minecraft">
-<h2>⛏ Minecraft Commands Hub</h2>
+<div id="minecraft" class="page">
+
+<h2>⛏ Minecraft Command Library</h2>
+
+<input id="search" onkeyup="searchCmd()" placeholder="Search Minecraft commands...">
+
+<div class="grid" id="cmds">
+
+<div class="card"><h3>Give Diamond Sword</h3><div class="cmd">/give @p diamond_sword 1</div></div>
+<div class="card"><h3>Creative Mode</h3><div class="cmd">/gamemode creative</div></div>
+<div class="card"><h3>Survival Mode</h3><div class="cmd">/gamemode survival</div></div>
+<div class="card"><h3>Set Day</h3><div class="cmd">/time set day</div></div>
+<div class="card"><h3>Set Night</h3><div class="cmd">/time set night</div></div>
+<div class="card"><h3>Clear Weather</h3><div class="cmd">/weather clear</div></div>
+<div class="card"><h3>Thunder</h3><div class="cmd">/weather thunder</div></div>
+<div class="card"><h3>Summon Creeper</h3><div class="cmd">/summon creeper</div></div>
+<div class="card"><h3>Teleport</h3><div class="cmd">/tp @p x y z</div></div>
+<div class="card"><h3>Kill All Mobs</h3><div class="cmd">/kill @e[type=!player]</div></div>
+<div class="card"><h3>Give Armor</h3><div class="cmd">/give @p diamond_chestplate</div></div>
+<div class="card"><h3>Enchant Sword</h3><div class="cmd">/enchant @p sharpness 5</div></div>
+
+</div>
+</div>
+
+<!-- GAMES -->
+<div id="games" class="page">
+
+<h2>🎮 Popular Games</h2>
 
 <div class="grid">
 
-<div class="card" onclick="toggle(this)">
-<div class="icon">⚔️</div>
-<h3>Give Items</h3>
-<div class="details">/give @p diamond_sword 1</div>
+<div class="card">
+<img src="https://i.imgur.com/3G8fXwF.png">
+<h3>Minecraft</h3>
+<p>Commands & Survival</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<div class="icon">🏃</div>
-<h3>Game Mode</h3>
-<div class="details">/gamemode creative</div>
+<div class="card">
+<img src="https://i.imgur.com/0XKc9qG.png">
+<h3>Roblox</h3>
+<p>Game Creation</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<div class="icon">☀️</div>
-<h3>Set Day</h3>
-<div class="details">/time set day</div>
+<div class="card">
+<img src="https://i.imgur.com/5cX1b8A.png">
+<h3>Fortnite</h3>
+<p>Battle Royale Tips</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<div class="icon">🌧</div>
-<h3>Clear Weather</h3>
-<div class="details">/weather clear</div>
+<div class="card">
+<img src="https://i.imgur.com/7xK8ZxQ.png">
+<h3>GTA V</h3>
+<p>Open World Cheats</p>
 </div>
 
-<div class="card" onclick="toggle(this)">
-<div class="icon">📦</div>
-<h3>More Items</h3>
-<div class="details">/give @p iron_pickaxe 1</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🔥</div>
-<h3>Kill All Mobs</h3>
-<div class="details">/kill @e[type=!player]</div>
-</div>
-
-</div>
-</section>
-
-<!-- ROBLOX -->
-<section id="roblox">
-<h2>🟦 Roblox Studio</h2>
-
-<div class="grid">
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🏗</div>
-<h3>Build Games</h3>
-<div class="details">Use Roblox Studio tools to create maps.</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">💻</div>
-<h3>Lua Basics</h3>
-<div class="details">Learn scripting with Lua language.</div>
-</div>
-
-</div>
-</section>
-
-<!-- FORTNITE -->
-<section id="fortnite">
-<h2>🛡 Fortnite Tips</h2>
-
-<div class="grid">
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🏗</div>
-<h3>Building</h3>
-<div class="details">Practice fast building skills.</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🎯</div>
-<h3>Aim Training</h3>
-<div class="details">Improve shooting accuracy daily.</div>
-</div>
-
-</div>
-</section>
-
-<!-- CRICKET -->
-<section id="cricket">
-<h2>🏏 Cricket Games</h2>
-
-<div class="grid">
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🏆</div>
-<h3>Career Mode</h3>
-<div class="details">Start your pro cricket journey.</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🏏</div>
-<h3>Batting Tips</h3>
-<div class="details">Improve timing and shot selection.</div>
-</div>
-
-</div>
-</section>
-
-<!-- MORE GAMES -->
-<section id="others">
-<h2>🎮 More Games</h2>
-
-<div class="grid">
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🚗</div>
-<h3>GTA Tips</h3>
-<div class="details">Open world missions and cheats.</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">⚽</div>
-<h3>FIFA / FC</h3>
-<div class="details">Best formation and skill moves.</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-<div class="icon">🔫</div>
+<div class="card">
+<img src="https://i.imgur.com/2Qx9k8L.png">
 <h3>PUBG</h3>
-<div class="details">Survival and landing strategies.</div>
+<p>Survival Guide</p>
+</div>
+
+<div class="card">
+<img src="https://i.imgur.com/9pQx3aC.png">
+<h3>FIFA / FC</h3>
+<p>Football Skills</p>
 </div>
 
 </div>
-</section>
+</div>
 
-<!-- TIP -->
-<section>
-<h2>⭐ Random Gaming Tip</h2>
-<button onclick="tip()">Show Tip</button>
-<p id="tip"></p>
-</section>
+<!-- TOOLS -->
+<div id="tools" class="page">
 
-<footer>
-<p>GameVerse Pro Hub © 2026</p>
-</footer>
+<h2>⚙ Minecraft Command Generator</h2>
+
+<input id="item" placeholder="item name">
+<input id="amount" placeholder="amount">
+
+<br>
+<button class="gen" onclick="generate()">Generate</button>
+
+<p id="out"></p>
+
+</div>
+
+<!-- LINKS -->
+<div id="links" class="page">
+
+<h2>🔗 Useful Gaming Links</h2>
+
+<p><a href="https://www.youtube.com/results?search_query=minecraft+commands" target="_blank">Minecraft Commands YouTube</a></p>
+
+<p><a href="https://minecraft.fandom.com/wiki/Commands" target="_blank">Minecraft Wiki Commands</a></p>
+
+<p><a href="https://www.roblox.com/" target="_blank">Roblox Official Site</a></p>
+
+<p><a href="https://www.fortnite.com/" target="_blank">Fortnite Official Site</a></p>
+
+</div>
 
 <script>
 
-function toggle(card){
-    let d = card.querySelector(".details");
-    d.style.display = (d.style.display === "block") ? "none" : "block";
+function show(id){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
 }
 
-function searchCards(){
-    let input = document.getElementById("searchBox").value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
+function searchCmd(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.querySelectorAll("#cmds .card");
 
-    cards.forEach(c=>{
-        c.style.display = c.innerText.toLowerCase().includes(input)
-        ? "block" : "none";
-    });
+cards.forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(input)?"block":"none";
+});
 }
 
-function tip(){
-let tips=[
-"Always carry food in Minecraft.",
-"Use high ground in Fortnite.",
-"Practice aim daily.",
-"Learn commands step by step.",
-"Explore caves carefully.",
-"Upgrade gear regularly."
-];
-
-document.getElementById("tip").innerText =
-tips[Math.floor(Math.random()*tips.length)];
+function generate(){
+let item=document.getElementById("item").value;
+let amt=document.getElementById("amount").value||1;
+document.getElementById("out").innerText=`/give @p ${item} ${amt}`;
 }
 
 </script>
