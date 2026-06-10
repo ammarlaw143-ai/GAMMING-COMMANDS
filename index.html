@@ -12,7 +12,7 @@ font-family:Arial;
 color:white;
 background:linear-gradient(-45deg,#0f9b0f,#1a237e,#004d40,#311b92);
 background-size:400% 400%;
-animation:bg 12s infinite;
+animation:bg 10s infinite;
 }
 
 @keyframes bg{
@@ -24,51 +24,39 @@ animation:bg 12s infinite;
 /* HEADER */
 header{
 text-align:center;
-padding:35px;
+padding:30px;
 background:rgba(0,0,0,0.6);
 }
 
-header h1{
-font-size:3rem;
-}
-
-/* NAV */
-nav{
-background:#111;
-padding:10px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:999;
-}
-
-nav button{
-background:none;
-border:none;
-color:white;
+header a{
+color:#ffd54f;
+text-decoration:none;
 margin:10px;
 font-weight:bold;
-cursor:pointer;
 }
 
 /* SEARCH */
-input{
-padding:12px;
-width:80%;
-max-width:500px;
-border:none;
-border-radius:10px;
-margin:10px;
+.searchBox{
+text-align:center;
+padding:15px;
 }
 
-/* PAGE */
-.page{
-display:none;
+.searchBox input{
+width:80%;
+max-width:500px;
+padding:12px;
+border:none;
+border-radius:10px;
+}
+
+/* SECTION */
+section{
 padding:20px;
 }
 
-.active{
-display:block;
+h2{
+border-left:5px solid #ffd54f;
+padding-left:10px;
 }
 
 /* GRID */
@@ -84,43 +72,40 @@ justify-content:center;
 background:rgba(0,0,0,0.45);
 padding:15px;
 border-radius:12px;
-width:260px;
+width:250px;
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.07);
-background:rgba(255,255,255,0.08);
+transform:scale(1.05);
 }
 
+/* IMAGE */
 .card img{
 width:100%;
+height:120px;
+object-fit:cover;
 border-radius:10px;
+background:#333;
 }
 
 /* COMMAND */
 .cmd{
 background:#222;
 padding:8px;
-border-radius:6px;
+margin-top:8px;
 font-family:monospace;
-margin-top:10px;
+border-radius:6px;
 }
 
 /* BUTTON */
-button.gen{
+button{
 background:#00c853;
 padding:10px;
 border:none;
-cursor:pointer;
-margin-top:10px;
 color:white;
+cursor:pointer;
 border-radius:8px;
-}
-
-/* LINKS */
-a{
-color:#ffd54f;
 }
 </style>
 </head>
@@ -129,34 +114,77 @@ color:#ffd54f;
 
 <header>
 <h1>🎮 GameVerse Pro Hub</h1>
-<p>Minecraft • Roblox • Fortnite • GTA • PUBG • FIFA • Guides</p>
+
+<p>
+<a href="#minecraft">Minecraft</a> |
+<a href="#games">Games</a> |
+<a href="#commands">Commands</a> |
+<a href="#links">Links</a>
+</p>
+
 </header>
 
-<nav>
-<button onclick="show('home')">Home</button>
-<button onclick="show('minecraft')">Minecraft</button>
-<button onclick="show('games')">Games</button>
-<button onclick="show('tools')">Tools</button>
-<button onclick="show('links')">Links</button>
-</nav>
-
-<!-- HOME -->
-<div id="home" class="page active">
-<h2>🔥 Welcome to Pro Gaming Hub</h2>
-<p>Search commands, explore games, and learn tutorials like a pro gamer.</p>
-
-<img src="https://i.imgur.com/3G8fXwF.png" width="200">
-<img src="https://i.imgur.com/0XKc9qG.png" width="200">
+<!-- SEARCH -->
+<div class="searchBox">
+<input type="text" id="search" onkeyup="searchAll()" placeholder="Search games or Minecraft commands...">
 </div>
 
-<!-- MINECRAFT -->
-<div id="minecraft" class="page">
+<!-- HOME -->
+<section>
+<h2>🔥 Welcome</h2>
+<p>This is your gaming hub with Minecraft commands, tutorials, and games.</p>
+</section>
 
-<h2>⛏ Minecraft Command Library</h2>
+<!-- GAMES -->
+<section id="games">
+<h2>🎮 Popular Games</h2>
 
-<input id="search" onkeyup="searchCmd()" placeholder="Search Minecraft commands...">
+<div class="grid">
 
-<div class="grid" id="cmds">
+<div class="card">
+<img src="https://via.placeholder.com/300x120/2e7d32/ffffff?text=Minecraft">
+<h3>Minecraft</h3>
+<p>Commands + Survival + Builds</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x120/1565c0/ffffff?text=Roblox">
+<h3>Roblox</h3>
+<p>Game Creation & Scripts</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x120/ef5350/ffffff?text=Fortnite">
+<h3>Fortnite</h3>
+<p>Battle Royale Tips</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x120/6a1b9a/ffffff?text=GTA+V">
+<h3>GTA V</h3>
+<p>Cheats & Open World</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x120/fbc02d/000000?text=PUBG">
+<h3>PUBG</h3>
+<p>Survival Strategy</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x120/009688/ffffff?text=FC+24">
+<h3>FIFA / FC 24</h3>
+<p>Football Skills</p>
+</div>
+
+</div>
+</section>
+
+<!-- MINECRAFT COMMANDS -->
+<section id="commands">
+<h2>⛏ Minecraft Commands (Expanded)</h2>
+
+<div class="grid">
 
 <div class="card"><h3>Give Diamond Sword</h3><div class="cmd">/give @p diamond_sword 1</div></div>
 <div class="card"><h3>Creative Mode</h3><div class="cmd">/gamemode creative</div></div>
@@ -165,111 +193,36 @@ color:#ffd54f;
 <div class="card"><h3>Set Night</h3><div class="cmd">/time set night</div></div>
 <div class="card"><h3>Clear Weather</h3><div class="cmd">/weather clear</div></div>
 <div class="card"><h3>Thunder</h3><div class="cmd">/weather thunder</div></div>
-<div class="card"><h3>Summon Creeper</h3><div class="cmd">/summon creeper</div></div>
 <div class="card"><h3>Teleport</h3><div class="cmd">/tp @p x y z</div></div>
-<div class="card"><h3>Kill All Mobs</h3><div class="cmd">/kill @e[type=!player]</div></div>
+<div class="card"><h3>Kill Mobs</h3><div class="cmd">/kill @e[type=!player]</div></div>
+<div class="card"><h3>Summon Creeper</h3><div class="cmd">/summon creeper</div></div>
 <div class="card"><h3>Give Armor</h3><div class="cmd">/give @p diamond_chestplate</div></div>
 <div class="card"><h3>Enchant Sword</h3><div class="cmd">/enchant @p sharpness 5</div></div>
 
 </div>
-</div>
-
-<!-- GAMES -->
-<div id="games" class="page">
-
-<h2>🎮 Popular Games</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://i.imgur.com/3G8fXwF.png">
-<h3>Minecraft</h3>
-<p>Commands & Survival</p>
-</div>
-
-<div class="card">
-<img src="https://i.imgur.com/0XKc9qG.png">
-<h3>Roblox</h3>
-<p>Game Creation</p>
-</div>
-
-<div class="card">
-<img src="https://i.imgur.com/5cX1b8A.png">
-<h3>Fortnite</h3>
-<p>Battle Royale Tips</p>
-</div>
-
-<div class="card">
-<img src="https://i.imgur.com/7xK8ZxQ.png">
-<h3>GTA V</h3>
-<p>Open World Cheats</p>
-</div>
-
-<div class="card">
-<img src="https://i.imgur.com/2Qx9k8L.png">
-<h3>PUBG</h3>
-<p>Survival Guide</p>
-</div>
-
-<div class="card">
-<img src="https://i.imgur.com/9pQx3aC.png">
-<h3>FIFA / FC</h3>
-<p>Football Skills</p>
-</div>
-
-</div>
-</div>
-
-<!-- TOOLS -->
-<div id="tools" class="page">
-
-<h2>⚙ Minecraft Command Generator</h2>
-
-<input id="item" placeholder="item name">
-<input id="amount" placeholder="amount">
-
-<br>
-<button class="gen" onclick="generate()">Generate</button>
-
-<p id="out"></p>
-
-</div>
+</section>
 
 <!-- LINKS -->
-<div id="links" class="page">
+<section id="links">
+<h2>🔗 Useful Links</h2>
 
-<h2>🔗 Useful Gaming Links</h2>
+<p><a href="https://www.minecraft.net" target="_blank">Minecraft Official Site</a></p>
+<p><a href="https://minecraft.fandom.com/wiki/Commands" target="_blank">Minecraft Commands Wiki</a></p>
+<p><a href="https://www.youtube.com/results?search_query=minecraft+commands" target="_blank">YouTube Tutorials</a></p>
+<p><a href="https://www.roblox.com" target="_blank">Roblox Official Site</a></p>
 
-<p><a href="https://www.youtube.com/results?search_query=minecraft+commands" target="_blank">Minecraft Commands YouTube</a></p>
-
-<p><a href="https://minecraft.fandom.com/wiki/Commands" target="_blank">Minecraft Wiki Commands</a></p>
-
-<p><a href="https://www.roblox.com/" target="_blank">Roblox Official Site</a></p>
-
-<p><a href="https://www.fortnite.com/" target="_blank">Fortnite Official Site</a></p>
-
-</div>
+</section>
 
 <script>
 
-function show(id){
-document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-}
-
-function searchCmd(){
+function searchAll(){
 let input=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll("#cmds .card");
+let cards=document.querySelectorAll(".card");
 
-cards.forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(input)?"block":"none";
+cards.forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(input)
+?"block":"none";
 });
-}
-
-function generate(){
-let item=document.getElementById("item").value;
-let amt=document.getElementById("amount").value||1;
-document.getElementById("out").innerText=`/give @p ${item} ${amt}`;
 }
 
 </script>
