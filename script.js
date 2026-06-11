@@ -42,3 +42,20 @@ card.style.display="none";
 });
 
 }
+function reply(){
+
+let q=
+document.getElementById("question")
+.value.toLowerCase();
+
+if(q.includes("diamond sword"))
+{
+document.getElementById("answer").innerHTML=
+"/give @p diamond_sword";
+}
+else{
+document.getElementById("answer").innerHTML=
+"Try asking about Minecraft commands.";
+}
+
+}
