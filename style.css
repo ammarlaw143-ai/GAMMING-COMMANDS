@@ -56,3 +56,79 @@ border-radius:10px;
 border:none;
 margin:20px;
 }
+/* FALLING CONTROLLERS */
+
+.controllers{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+.controllers span{
+position:absolute;
+display:block;
+font-size:40px;
+animation:fall 10s linear infinite;
+opacity:0.6;
+}
+
+/* Different positions */
+.controllers span:nth-child(1){
+left:5%;
+animation-duration:8s;
+}
+
+.controllers span:nth-child(2){
+left:15%;
+animation-duration:12s;
+}
+
+.controllers span:nth-child(3){
+left:30%;
+animation-duration:10s;
+}
+
+.controllers span:nth-child(4){
+left:45%;
+animation-duration:14s;
+}
+
+.controllers span:nth-child(5){
+left:60%;
+animation-duration:9s;
+}
+
+.controllers span:nth-child(6){
+left:75%;
+animation-duration:13s;
+}
+
+.controllers span:nth-child(7){
+left:85%;
+animation-duration:11s;
+}
+
+.controllers span:nth-child(8){
+left:95%;
+animation-duration:15s;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px) rotate(0deg);
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+
+
+
+
