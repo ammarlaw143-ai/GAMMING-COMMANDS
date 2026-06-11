@@ -236,6 +236,22 @@ transform:translateY(-100px) rotate(0deg);
 
 100%{
 transform:translateY(110vh) rotate(360deg);
+    .download-btn{
+    display:inline-block;
+    padding:20px 40px;
+    background:#00c853;
+    color:white;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:bold;
+    border-radius:15px;
+    box-shadow:0 0 20px #00ff00;
+    transition:0.3s;
+}
+
+.download-btn:hover{
+    transform:scale(1.1);
+}
 }
 }
 
