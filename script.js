@@ -1,24 +1,22 @@
-function searchCommands(){
+let c=0;
+let g=0;
+let ga=0;
 
-let input =
-document.getElementById("search")
-.value.toLowerCase();
+setInterval(()=>{
 
-let commands =
-document.querySelectorAll("#commands p");
-
-commands.forEach(cmd=>{
-
-if(cmd.innerText
-.toLowerCase()
-.includes(input))
-{
-cmd.style.display="block";
-}
-else{
-cmd.style.display="none";
+if(c<100){
+c++;
+document.getElementById("commands").innerHTML=c;
 }
 
-});
-
+if(g<50){
+g++;
+document.getElementById("guides").innerHTML=g;
 }
+
+if(ga<20){
+ga++;
+document.getElementById("games").innerHTML=ga;
+}
+
+},30);
