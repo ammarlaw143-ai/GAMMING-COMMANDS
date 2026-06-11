@@ -1,77 +1,58 @@
 body{
 margin:0;
 font-family:Arial;
-background:#090b16;
+background:#0b1020;
 color:white;
 }
 
 header{
 text-align:center;
-padding:40px;
-background:linear-gradient(90deg,#6a00ff,#00d4ff);
+padding:80px 20px;
+background:linear-gradient(45deg,#6a00ff,#00d4ff);
+}
+
+h1{
+text-shadow:0 0 15px cyan;
+}
+
+.btn{
+background:#ff00ff;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+border-radius:10px;
+margin:5px;
+display:inline-block;
+box-shadow:0 0 20px #ff00ff;
+}
+
+.card{
+background:#151a2c;
+padding:20px;
+margin:20px;
+border-radius:15px;
+box-shadow:0 0 15px #00d4ff;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 nav{
-background:#111;
 padding:15px;
-text-align:center;
-position:sticky;
-top:0;
+background:black;
 }
 
 nav a{
 color:white;
-margin:10px;
 text-decoration:none;
-font-weight:bold;
 }
 
-#searchBar{
+input{
 padding:12px;
-width:60%;
+width:300px;
+border-radius:10px;
 border:none;
-border-radius:10px;
-}
-
-section{
-padding:30px;
-}
-
-h2{
-color:#00d4ff;
-}
-
-.card-container{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
-}
-
-.card{
-width:250px;
-background:#151a2c;
-padding:15px;
-border-radius:15px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px #00d4ff;
-}
-
-button{
-background:#00d4ff;
-border:none;
-padding:10px 15px;
-cursor:pointer;
-border-radius:10px;
-}
-
-#chatOutput{
-margin-top:15px;
-padding:15px;
-background:#151a2c;
-border-radius:10px;
+margin:20px;
 }
