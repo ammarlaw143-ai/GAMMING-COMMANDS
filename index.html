@@ -1,150 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro Gaming Hub V2</title>
+<title>Pro Gaming Hub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="particles"></div>
+<div class="particles"></div>
 
 <header>
-    <h1>🎮 PRO GAMING HUB V2</h1>
-    <p>Minecraft • Roblox • Fortnite • GTA • PUBG • FC 26</p>
+<h1>🎮 PRO GAMING HUB</h1>
+<p>Gaming Tutorials, Commands, Downloads & Videos</p>
 
-    <input type="text" id="searchBar" placeholder="Search commands, games, guides..." onkeyup="searchContent()">
+<a class="btn" href="minecraft.html">Minecraft</a>
+<a class="btn" href="roblox.html">Roblox</a>
+<a class="btn" href="fortnite.html">Fortnite</a>
 </header>
 
-<nav>
-    <a href="#games">Games</a>
-    <a href="#minecraft">Minecraft</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#videos">Videos</a>
-    <a href="#chatbot">AI Helper</a>
-</nav>
-
-<section id="games">
-    <h2>🔥 Popular Games</h2>
-
-    <div class="card-container">
-
-        <div class="card">
-            <h3>⛏ Minecraft</h3>
-            <p>Commands, tutorials, builds and survival guides.</p>
-        </div>
-
-        <div class="card">
-            <h3>🟦 Roblox</h3>
-            <p>Game creation and scripting tutorials.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏹 Fortnite</h3>
-            <p>Battle Royale tips and tricks.</p>
-        </div>
-
-        <div class="card">
-            <h3>🚗 GTA V</h3>
-            <p>Cheats, missions and gameplay.</p>
-        </div>
-
-        <div class="card">
-            <h3>🔫 PUBG</h3>
-            <p>Weapons and survival strategies.</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="minecraft">
-<h2>⛏ Minecraft Commands</h2>
-
-<div id="commands">
-
-<p>/gamemode creative</p>
-<p>/gamemode survival</p>
-<p>/give @p diamond_sword</p>
-<p>/give @p diamond_pickaxe</p>
-<p>/time set day</p>
-<p>/time set night</p>
-<p>/weather clear</p>
-<p>/weather rain</p>
-<p>/weather thunder</p>
-<p>/tp @p 100 70 100</p>
-<p>/summon creeper</p>
-<p>/summon zombie</p>
-<p>/summon skeleton</p>
-<p>/kill @e[type=!player]</p>
-<p>/effect give @p speed 9999 5</p>
-<p>/effect give @p jump_boost 9999 5</p>
-<p>/effect give @p strength 9999 5</p>
-<p>/enchant @p sharpness 5</p>
-<p>/enchant @p unbreaking 3</p>
-<p>/xp add @p 100 levels</p>
-
-</div>
-</section>
-
-<section id="downloads">
-<h2>📥 Mods & Maps</h2>
-
-<div class="card-container">
+<section class="games">
 
 <div class="card">
-<h3>🏰 Adventure Map</h3>
-<p>Add your download link later.</p>
+<h2>⛏ Minecraft</h2>
+<p>Commands, Tutorials, Mods</p>
+<a href="minecraft.html">Open</a>
 </div>
 
 <div class="card">
-<h3>⚔ PvP Pack</h3>
-<p>Add your download link later.</p>
+<h2>🟦 Roblox</h2>
+<p>Scripts & Guides</p>
+<a href="roblox.html">Open</a>
 </div>
 
 <div class="card">
-<h3>🎨 Texture Pack</h3>
-<p>Add your download link later.</p>
+<h2>🏹 Fortnite</h2>
+<p>Tips & Tricks</p>
+<a href="fortnite.html">Open</a>
 </div>
-
-</div>
-</section>
-
-<section id="videos">
-<h2>🎥 Gaming Videos</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>Minecraft Tutorials</h3>
-</div>
-
-<div class="card">
-<h3>Roblox Tutorials</h3>
-</div>
-
-<div class="card">
-<h3>Fortnite Guides</h3>
-</div>
-
-</div>
-</section>
-
-<section id="chatbot">
-<h2>🤖 Minecraft Helper</h2>
-
-<input type="text" id="userInput" placeholder="Ask about Minecraft...">
-
-<button onclick="chatbot()">Ask</button>
-
-<div id="chatOutput"></div>
 
 </section>
-
-<footer>
-<h3>🏆 Pro Gaming Hub V2</h3>
-<p>Created by Ammar</p>
-</footer>
 
 <script src="script.js"></script>
 
