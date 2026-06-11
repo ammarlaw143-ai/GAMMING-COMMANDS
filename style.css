@@ -30,14 +30,28 @@ text-shadow:0 0 15px cyan;
 }
 
 .btn{
-background:#ff00ff;
-padding:12px 20px;
-color:white;
-text-decoration:none;
-border-radius:10px;
-margin:5px;
 display:inline-block;
-box-shadow:0 0 20px #ff00ff;
+padding:12px 24px;
+margin:8px;
+text-decoration:none;
+color:white;
+background:#ff00ff;
+border-radius:10px;
+
+box-shadow:
+0 0 10px #ff00ff,
+0 0 20px #ff00ff;
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+
+box-shadow:
+0 0 20px #ff00ff,
+0 0 40px #ff00ff,
+0 0 60px #ff00ff;
 }
 
 .card{
