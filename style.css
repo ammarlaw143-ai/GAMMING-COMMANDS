@@ -1,152 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro Gaming Hub V2</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+body{
+margin:0;
+font-family:Arial;
+background:#090b16;
+color:white;
+}
 
-<div id="particles"></div>
+header{
+text-align:center;
+padding:40px;
+background:linear-gradient(90deg,#6a00ff,#00d4ff);
+}
 
-<header>
-    <h1>🎮 PRO GAMING HUB V2</h1>
-    <p>Minecraft • Roblox • Fortnite • GTA • PUBG • FC 26</p>
+nav{
+background:#111;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
 
-    <input type="text" id="searchBar" placeholder="Search commands, games, guides..." onkeyup="searchContent()">
-</header>
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
 
-<nav>
-    <a href="#games">Games</a>
-    <a href="#minecraft">Minecraft</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#videos">Videos</a>
-    <a href="#chatbot">AI Helper</a>
-</nav>
+#searchBar{
+padding:12px;
+width:60%;
+border:none;
+border-radius:10px;
+}
 
-<section id="games">
-    <h2>🔥 Popular Games</h2>
+section{
+padding:30px;
+}
 
-    <div class="card-container">
+h2{
+color:#00d4ff;
+}
 
-        <div class="card">
-            <h3>⛏ Minecraft</h3>
-            <p>Commands, tutorials, builds and survival guides.</p>
-        </div>
+.card-container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
 
-        <div class="card">
-            <h3>🟦 Roblox</h3>
-            <p>Game creation and scripting tutorials.</p>
-        </div>
+.card{
+width:250px;
+background:#151a2c;
+padding:15px;
+border-radius:15px;
+transition:0.3s;
+}
 
-        <div class="card">
-            <h3>🏹 Fortnite</h3>
-            <p>Battle Royale tips and tricks.</p>
-        </div>
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #00d4ff;
+}
 
-        <div class="card">
-            <h3>🚗 GTA V</h3>
-            <p>Cheats, missions and gameplay.</p>
-        </div>
+button{
+background:#00d4ff;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+border-radius:10px;
+}
 
-        <div class="card">
-            <h3>🔫 PUBG</h3>
-            <p>Weapons and survival strategies.</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="minecraft">
-<h2>⛏ Minecraft Commands</h2>
-
-<div id="commands">
-
-<p>/gamemode creative</p>
-<p>/gamemode survival</p>
-<p>/give @p diamond_sword</p>
-<p>/give @p diamond_pickaxe</p>
-<p>/time set day</p>
-<p>/time set night</p>
-<p>/weather clear</p>
-<p>/weather rain</p>
-<p>/weather thunder</p>
-<p>/tp @p 100 70 100</p>
-<p>/summon creeper</p>
-<p>/summon zombie</p>
-<p>/summon skeleton</p>
-<p>/kill @e[type=!player]</p>
-<p>/effect give @p speed 9999 5</p>
-<p>/effect give @p jump_boost 9999 5</p>
-<p>/effect give @p strength 9999 5</p>
-<p>/enchant @p sharpness 5</p>
-<p>/enchant @p unbreaking 3</p>
-<p>/xp add @p 100 levels</p>
-
-</div>
-</section>
-
-<section id="downloads">
-<h2>📥 Mods & Maps</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>🏰 Adventure Map</h3>
-<p>Add your download link later.</p>
-</div>
-
-<div class="card">
-<h3>⚔ PvP Pack</h3>
-<p>Add your download link later.</p>
-</div>
-
-<div class="card">
-<h3>🎨 Texture Pack</h3>
-<p>Add your download link later.</p>
-</div>
-
-</div>
-</section>
-
-<section id="videos">
-<h2>🎥 Gaming Videos</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>Minecraft Tutorials</h3>
-</div>
-
-<div class="card">
-<h3>Roblox Tutorials</h3>
-</div>
-
-<div class="card">
-<h3>Fortnite Guides</h3>
-</div>
-
-</div>
-</section>
-
-<section id="chatbot">
-<h2>🤖 Minecraft Helper</h2>
-
-<input type="text" id="userInput" placeholder="Ask about Minecraft...">
-
-<button onclick="chatbot()">Ask</button>
-
-<div id="chatOutput"></div>
-
-</section>
-
-<footer>
-<h3>🏆 Pro Gaming Hub V2</h3>
-<p>Created by Ammar</p>
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+#chatOutput{
+margin-top:15px;
+padding:15px;
+background:#151a2c;
+border-radius:10px;
+}
