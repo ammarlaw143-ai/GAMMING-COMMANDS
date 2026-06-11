@@ -1,50 +1,24 @@
-function searchContent() {
+function searchCommands(){
 
 let input =
-document.getElementById("searchBar")
+document.getElementById("search")
 .value.toLowerCase();
 
-let cards =
-document.querySelectorAll(".card");
+let commands =
+document.querySelectorAll("#commands p");
 
-cards.forEach(card => {
+commands.forEach(cmd=>{
 
-if(card.innerText
+if(cmd.innerText
 .toLowerCase()
 .includes(input))
 {
-card.style.display="block";
+cmd.style.display="block";
 }
 else{
-card.style.display="none";
+cmd.style.display="none";
 }
 
 });
-
-}
-
-function chatbot(){
-
-let q =
-document.getElementById("userInput")
-.value.toLowerCase();
-
-let answer="";
-
-if(q.includes("diamond")){
-answer="Diamonds are commonly found deep underground.";
-}
-else if(q.includes("teleport")){
-answer="Use /tp @p x y z";
-}
-else if(q.includes("creeper")){
-answer="Creepers explode when close to players.";
-}
-else{
-answer="Try asking about diamonds, teleporting, creepers, enchantments or commands.";
-}
-
-document.getElementById("chatOutput")
-.innerHTML=answer;
 
 }
