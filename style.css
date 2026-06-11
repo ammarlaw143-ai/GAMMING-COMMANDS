@@ -1,16 +1,87 @@
+/* GAMING BACKGROUND */
+
 body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(
-135deg,
-#090909,
-#12002e,
-#001f3f,
-#3d0066
-);
-background-size:400% 400%;
-animation:bgmove 10s ease infinite;
-color:white;
+    margin:0;
+    font-family:Arial, sans-serif;
+    color:white;
+
+    background:linear-gradient(
+        -45deg,
+        #0f0c29,
+        #302b63,
+        #24243e,
+        #00c853,
+        #00d4ff
+    );
+
+    background-size:400% 400%;
+    animation:gamingBackground 15s ease infinite;
+}
+
+/* Animated background */
+@keyframes gamingBackground{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Neon heading */
+h1{
+    text-align:center;
+    font-size:50px;
+    text-shadow:
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff;
+}
+
+/* Gaming cards */
+.card{
+    background:rgba(0,0,0,0.6);
+    border:2px solid #00d4ff;
+    border-radius:15px;
+    padding:20px;
+    margin:20px;
+
+    box-shadow:
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff;
+}
+
+/* Neon buttons */
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#00c853;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+
+    box-shadow:
+        0 0 10px #00c853,
+        0 0 20px #00c853;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
 }
 
 @keyframes bgmove{
