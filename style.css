@@ -327,6 +327,25 @@ background:linear-gradient(45deg,#ff00ff,#00d4ff);
 box-shadow:
 0 0 20px #ff00ff,
 0 0 40px #00d4ff;
+    .stats{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:50px;
+}
+
+.stat{
+text-align:center;
+background:rgba(0,0,0,.4);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 20px cyan;
+}
+
+.stat h2{
+font-size:50px;
+color:#00ffcc;
+}
 }
 }
 }
