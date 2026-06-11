@@ -20,3 +20,25 @@ document.getElementById("games").innerHTML=ga;
 }
 
 },30);
+function searchSite(){
+
+let s =
+document.getElementById("search")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".game-card");
+
+cards.forEach(card=>{
+
+if(card.innerText.toLowerCase().includes(s))
+{
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
