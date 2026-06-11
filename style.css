@@ -1,8 +1,22 @@
 body{
 margin:0;
 font-family:Arial;
-background:#0b1020;
+background:linear-gradient(
+135deg,
+#090909,
+#12002e,
+#001f3f,
+#3d0066
+);
+background-size:400% 400%;
+animation:bgmove 10s ease infinite;
 color:white;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 header{
