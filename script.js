@@ -1,61 +1,237 @@
-let c=0;
-let g=0;
-let ga=0;
+// ===========================
+// GAMING COMMAND CENTER JS
+// ===========================
 
-setInterval(()=>{
+// Animated Counters
 
-if(c<100){
-c++;
-document.getElementById("commands").innerHTML=c;
+let commands = 0;
+let guides = 0;
+let games = 0;
+
+function animateCounters(){
+
+let counter = setInterval(()=>{
+
+if(document.getElementById("cmdCount")){
+
+if(commands < 150){
+commands++;
+document.getElementById("cmdCount").innerHTML = commands;
 }
 
-if(g<50){
-g++;
-document.getElementById("guides").innerHTML=g;
+if(guides < 80){
+guides++;
+document.getElementById("guideCount").innerHTML = guides;
 }
 
-if(ga<20){
-ga++;
-document.getElementById("games").innerHTML=ga;
+if(games < 25){
+games++;
+document.getElementById("gameCount").innerHTML = games;
 }
 
-},30);
-function searchSite(){
+}
 
-let s =
-document.getElementById("search")
-.value.toLowerCase();
+if(commands >= 150 &&
+guides >= 80 &&
+games >= 25){
+
+clearInterval(counter);
+
+}
+
+},20);
+
+}
+
+animateCounters();
+
+
+// ===========================
+// Search System
+// ===========================
+
+function searchGames(){
+
+let input =
+document.getElementById("search");
+
+if(!input) return;
+
+let filter =
+input.value.toLowerCase();
 
 let cards =
 document.querySelectorAll(".game-card");
 
 cards.forEach(card=>{
 
-if(card.innerText.toLowerCase().includes(s))
-{
-card.style.display="block";
-}
-else{
-card.style.display="none";
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(filter)){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
 }
 
 });
 
 }
-function reply(){
 
-let q=
-document.getElementById("question")
-.value.toLowerCase();
 
-if(q.includes("diamond sword"))
-{
-document.getElementById("answer").innerHTML=
-"/give @p diamond_sword";
+// ===========================
+// Minecraft Helper Chatbot
+// ===========================
+
+function askMinecraft(){
+
+let question =
+document.getElementById("question");
+
+let answer =
+document.getElementById("answer");
+
+if(!question || !answer) return;
+
+let q =
+question.value.toLowerCase();
+
+if(q.includes("diamond sword")){
+
+answer.innerHTML =
+"/give @p diamond_sword 1";
+
 }
+
+else if(q.includes("creative")){
+
+answer.innerHTML =
+"/gamemode creative";
+
+}
+
+else if(q.includes("survival")){
+
+answer.innerHTML =
+"/gamemode survival";
+
+}
+
+else if(q.includes("day")){
+
+answer.innerHTML =
+"/time set day";
+
+}
+
+else if(q.includes("night")){
+
+answer.innerHTML =
+"/time set night";
+
+}
+
+else if(q.includes("speed")){
+
+answer.innerHTML =
+"/effect give @p speed 99999 5";
+
+}
+
 else{
-document.getElementById("answer").innerHTML=
-"Try asking about Minecraft commands.";
+
+answer.innerHTML =
+"Try: diamond sword, creative, survival, day, night, speed";
+
 }
 
 }
+
+
+// ===========================
+// Welcome Popup
+// ===========================
+
+window.onload = function(){
+
+console.log(
+"Gaming Command Center Loaded"
+);
+
+};
+
+
+// ===========================
+// Neon Button Animation
+// ===========================
+
+let buttons =
+document.querySelectorAll(".btn");
+
+buttons.forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.transform =
+"scale(1.08)";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.transform =
+"scale(1)";
+
+});
+
+});
+
+
+// ===========================
+// Scroll Animation
+// ===========================
+
+window.addEventListener("scroll",()=>{
+
+let cards =
+document.querySelectorAll(".game-card");
+
+cards.forEach(card=>{
+
+let position =
+card.getBoundingClientRect().top;
+
+let screen =
+window.innerHeight;
+
+if(position < screen - 100){
+
+card.style.opacity = "1";
+card.style.transform =
+"translateY(0)";
+
+}
+
+});
+
+});
+
+
+// ===========================
+// Initial Card State
+// ===========================
+
+document.querySelectorAll(".game-card")
+.forEach(card=>{
+
+card.style.opacity = "0";
+card.style.transform =
+"translateY(40px)";
+card.style.transition =
+"0.8s";
+
+});
