@@ -1,114 +1,121 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Gaming Command Center</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaming Command Center</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<div class="controllers">
+<span>🎮</span>
+<span>🎮</span>
+<span>🎮</span>
+<span>🎮</span>
+<span>🎮</span>
+<span>🎮</span>
+</div>
 
 <nav class="navbar">
-<a href="#">🏠 Home</a>
+<a href="index.html">🏠 Home</a>
 <a href="minecraft.html">⛏ Minecraft</a>
 <a href="gta.html">🚗 GTA</a>
 <a href="fortnite.html">🏹 Fortnite</a>
+<a href="cod.html">🔫 COD</a>
+<a href="pubg.html">🎯 PUBG</a>
 <a href="downloads.html">📥 Downloads</a>
 <a href="contact.html">📞 Contact</a>
 </nav>
 
 <header class="hero">
+<h1>🎮 GAMING COMMAND CENTER</h1>
+<p>Minecraft Commands • GTA Cheats • Fortnite Tutorials • COD Loadouts</p>
 
-<h1>🎮 MINECRAFT COMMAND CENTER</h1>
-
-<p>Gaming Tutorials, Commands, Downloads & Videos</p>
-
+<input id="search" placeholder="Search Games..." onkeyup="searchGames()">
 </header>
-<input
-id="search"
-placeholder="Search Minecraft, GTA, Fortnite..."
-onkeyup="searchSite()">
+
 <section class="stats">
 
 <div class="stat">
-<h2 id="commands">0</h2>
+<h2 id="cmdCount">0</h2>
 <p>Minecraft Commands</p>
 </div>
 
 <div class="stat">
-<h2 id="guides">0</h2>
+<h2 id="guideCount">0</h2>
 <p>Gaming Guides</p>
 </div>
 
 <div class="stat">
-<h2 id="games">0</h2>
+<h2 id="gameCount">0</h2>
 <p>Games Covered</p>
 </div>
 
 </section>
+
 <section class="games">
 
 <div class="game-card">
-<img src="images/minecraft.jpg">
 <h2>⛏ Minecraft</h2>
-<p>100+ Commands & Tutorials</p>
+<p>Commands, Tutorials & Guides</p>
 <a href="minecraft.html" class="btn">Open</a>
 </div>
 
 <div class="game-card">
-<img src="images/roblox.jpg">
-<h2>🟦 Roblox</h2>
-<p>Scripts & Guides</p>
-<a href="roblox.html" class="btn">Open</a>
-</div>
-
-<div class="game-card">
-<img src="images/fortnite.jpg">
-<h2>🏹 Fortnite</h2>
-<p>Best Weapons & Tips</p>
-<a href="fortnite.html" class="btn">Open</a>
-</div>
-
-<div class="game-card">
-<img src="images/gta.jpg">
 <h2>🚗 GTA V</h2>
 <p>Cheats & Secrets</p>
 <a href="gta.html" class="btn">Open</a>
 </div>
 
 <div class="game-card">
-<img src="images/cod.jpg">
+<h2>🏹 Fortnite</h2>
+<p>Weapons & Tutorials</p>
+<a href="fortnite.html" class="btn">Open</a>
+</div>
+
+<div class="game-card">
 <h2>🔫 Call of Duty</h2>
 <p>Best Guns & Loadouts</p>
 <a href="cod.html" class="btn">Open</a>
 </div>
 
 <div class="game-card">
-<img src="images/pubg.jpg">
 <h2>🎯 PUBG</h2>
-<p>Weapons & Strategies</p>
+<p>Tips & Strategies</p>
 <a href="pubg.html" class="btn">Open</a>
 </div>
-  <div class="chatbox">
 
-<h2>🤖 Minecraft Helper</h2>
-
-<input id="question"
-placeholder="Type: diamond sword">
-
-<button onclick="reply()">
-Ask
-</button>
-
-<p id="answer"></p>
-
+<div class="game-card">
+<h2>🟦 Roblox</h2>
+<p>Scripts & Tutorials</p>
+<a href="roblox.html" class="btn">Open</a>
 </div>
 
 </section>
 
-  <script src="script.js"></script>
+<section class="videos">
+
+<h1>🎥 Featured Gaming Videos</h1>
+
+<div class="game-card">
+<h2>Minecraft Survival Guide</h2>
+<p>Learn survival tips and tricks.</p>
+</div>
+
+<div class="game-card">
+<h2>Fortnite Building Tips</h2>
+<p>Improve your gameplay.</p>
+</div>
+
+</section>
+
+<footer>
+<p>© Gaming Command Center 2026</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
