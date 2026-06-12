@@ -235,3 +235,24 @@ card.style.transition =
 "0.8s";
 
 });
+function showMoreCommands(){
+
+let commands =
+document.getElementById("moreCommands");
+
+let btn =
+document.getElementById("moreBtn");
+
+if(commands.style.display === "none"){
+
+commands.style.display = "grid";
+btn.innerHTML = "🔼 Hide Commands";
+
+}else{
+
+commands.style.display = "none";
+btn.innerHTML = "📜 Show More Commands";
+
+}
+
+}
