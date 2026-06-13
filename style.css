@@ -361,3 +361,7 @@ display:block;
 margin:30px auto;
 font-size:20px;
 }
+
+#moreGTA{
+display:none;
+}
