@@ -351,3 +351,13 @@ padding:40px;
 #moreCommands{
 display:none;
 }
+
+#moreGTA{
+display:none;
+}
+
+#gtaBtn{
+display:block;
+margin:30px auto;
+font-size:20px;
+}
