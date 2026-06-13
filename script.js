@@ -256,3 +256,25 @@ btn.innerHTML = "📜 Show More Commands";
 }
 
 }
+
+function showMoreGTA(){
+
+let gta =
+document.getElementById("moreGTA");
+
+let btn =
+document.getElementById("gtaBtn");
+
+if(gta.style.display === "block"){
+
+gta.style.display = "none";
+btn.innerHTML = "🚗 Show More GTA Guides";
+
+}else{
+
+gta.style.display = "block";
+btn.innerHTML = "🔼 Hide GTA Guides";
+
+}
+
+}
