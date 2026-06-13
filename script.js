@@ -300,3 +300,20 @@ btn.innerHTML = "🔼 Hide Fortnite Guides";
 }
 
 }
+
+// Fortnite Show More Button
+
+function showMoreFortnite() {
+
+const section = document.getElementById("moreFortnite");
+const btn = document.getElementById("fortniteBtn");
+
+if (section.style.display === "block") {
+    section.style.display = "none";
+    btn.innerHTML = "🏹 Show More Fortnite Guides";
+} else {
+    section.style.display = "block";
+    btn.innerHTML = "🔼 Hide Fortnite Guides";
+}
+
+}
