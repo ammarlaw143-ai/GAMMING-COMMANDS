@@ -278,3 +278,25 @@ btn.innerHTML = "🔼 Hide GTA Guides";
 }
 
 }
+
+function showMoreFortnite(){
+
+let section =
+document.getElementById("moreFortnite");
+
+let btn =
+document.getElementById("fortniteBtn");
+
+if(section.style.display === "block"){
+
+section.style.display = "none";
+btn.innerHTML = "🏹 Show More Fortnite Guides";
+
+}else{
+
+section.style.display = "block";
+btn.innerHTML = "🔼 Hide Fortnite Guides";
+
+}
+
+}
