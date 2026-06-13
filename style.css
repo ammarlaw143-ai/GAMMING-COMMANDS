@@ -396,3 +396,19 @@ width:300px;
 margin:40px auto !important;
 text-align:center;
 }
+
+.downloads-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+padding:30px;
+}
+
+.card{
+background:rgba(0,0,0,.5);
+border:2px solid #00d4ff;
+border-radius:20px;
+padding:20px;
+text-align:center;
+box-shadow:0 0 20px #00d4ff;
+}
