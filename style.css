@@ -6,6 +6,17 @@ padding:0;
 box-sizing:border-box;
 }
 
+html, body{
+width:100%;
+overflow-x:hidden;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 font-family:Arial,sans-serif;
 color:white;
@@ -92,6 +103,10 @@ padding:15px;
 
 background:rgba(0,0,0,.7);
 backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .navbar a{
@@ -245,6 +260,9 @@ border-color:
 box-shadow:
 0 0 30px rgba(255,0,255,.6);
 
+  box-sizing:border-box;
+overflow:hidden;
+
 }
 
 /* BUTTONS */
@@ -302,8 +320,8 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-pointer-events:none;
 overflow:hidden;
+pointer-events:none;
 z-index:-1;
 }
 
@@ -583,4 +601,11 @@ to{
 transform:translate(50px,-50px);
 }
 
+}
+
+
+img{
+max-width:100%;
+height:auto;
+display:block;
 }
