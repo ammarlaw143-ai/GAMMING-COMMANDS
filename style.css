@@ -617,9 +617,32 @@ display:none;
 #codBtn{
 display:block;
 margin:40px auto;
-padding:15px 30px;
+padding:15px 35px;
 font-size:20px;
+font-weight:bold;
+
+background:linear-gradient(
+45deg,
+#00d4ff,
+#7c3aed
+);
+
+color:white;
 border:none;
 border-radius:12px;
 cursor:pointer;
+
+box-shadow:
+0 0 15px #00d4ff,
+0 0 30px #7c3aed;
+
+transition:.3s;
+}
+
+#codBtn:hover{
+transform:scale(1.08);
+
+box-shadow:
+0 0 25px #00d4ff,
+0 0 50px #7c3aed;
 }
