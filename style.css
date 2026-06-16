@@ -607,3 +607,9 @@ display:block;
 margin:20px auto;
 width:120px;
 }
+
+img{
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
