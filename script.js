@@ -342,3 +342,28 @@ btn.innerHTML = "🔫 Show More COD Guides";
 }
 
 }
+
+//PUBG SHOW MORE BUTTON
+
+function showMorePUBG(){
+
+let section =
+document.getElementById("morePUBG");
+
+let btn =
+document.getElementById("pubgBtn");
+
+if(section.style.display === "none" ||
+section.style.display === ""){
+
+section.style.display = "block";
+btn.innerHTML = "🔼 Hide PUBG Guides";
+
+}else{
+
+section.style.display = "none";
+btn.innerHTML = "🎯 Show More PUBG Guides";
+
+}
+
+}
