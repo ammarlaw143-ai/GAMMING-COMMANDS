@@ -318,6 +318,8 @@ if (section.style.display === "block") {
 
 }
 
+// COD show more button
+
 function showMoreCOD(){
 
 let section =
@@ -326,15 +328,16 @@ document.getElementById("moreCOD");
 let btn =
 document.getElementById("codBtn");
 
-if(section.style.display === "block"){
-
-section.style.display = "none";
-btn.innerHTML = "🔫 Show More COD Guides";
-
-}else{
+if(section.style.display === "none" ||
+section.style.display === ""){
 
 section.style.display = "block";
 btn.innerHTML = "🔼 Hide COD Guides";
+
+}else{
+
+section.style.display = "none";
+btn.innerHTML = "🔫 Show More COD Guides";
 
 }
 
